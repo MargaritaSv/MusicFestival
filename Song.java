@@ -5,6 +5,7 @@ package MusicFestival;
  */
 public class Song {
     public static final String NO_TEXT = "the song is instrumental";
+
     private String title;
     private StringBuilder text;
 

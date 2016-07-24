@@ -7,12 +7,18 @@ import java.util.ArrayList;
  */
 public class Group {
     private String name;
-    private ArrayList<Song> songs;
+    private Song[] songs;
     private ArrayList<Musician> musicians;
 
-    public Group(String name, ArrayList<Song> songs, ArrayList<Musician> musicians) {
+    public Group(String name, Song[] songs, ArrayList<Musician> musicians) {
         this.setName(name);
-        this.songs = new ArrayList<>();
+        this.setSongs(songs);
+        this.setMusicians(musicians);
+    }
+
+    public Group(String name) {
+        this.setName(name);
+        this.setSongs(new Song[10]);
         this.musicians = new ArrayList<>();
     }
 
@@ -24,4 +30,11 @@ public class Group {
         this.name = name;
     }
 
+    public void setSongs(Song... songs) {
+        this.songs = songs;
+    }
+
+    public void setMusicians(ArrayList<Musician> musicians) {
+        this.musicians = musicians;
+    }
 }
