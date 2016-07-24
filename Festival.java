@@ -10,7 +10,6 @@ public class Festival {
     private String place;
     private String time;
     private Group[] groups;
-    private TreeMap<Group, String> orderInThScene;
 
 
     public Festival(String name, String place, String time, Group[] groups) {
@@ -18,7 +17,6 @@ public class Festival {
         this.setPlace(place);
         this.setTime(time);
         this.groups = groups;
-        this.orderInThScene = new TreeMap<>();
     }
 
     public String getName() {
@@ -63,18 +61,6 @@ public class Festival {
             throw new IllegalArgumentException("Festival doesn't exist without groups");
         }
         this.groups = groups;
-    }
-
-    public TreeMap<Group, String> getOrderInThScene() {
-        return orderInThScene;
-    }
-
-    public void setOrderInThScene(Group group, String timeONScene) {
-        if (group.equals(null) || timeONScene == null ) {
-            throw new IllegalArgumentException("Wrong data information for festival.");
-        }
-        orderInThScene.put(group, timeONScene);
-        //   this.orderInThScene = orderInThScene;
     }
 
     @Override

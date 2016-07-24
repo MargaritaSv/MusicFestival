@@ -50,20 +50,31 @@ public class Main {
 
         Group klangkarussell = new Group("Klangkarussell", arList, new Song[]{klangkarussellSong});
 
-
         Festival festival = new Festival("Dance", "Sofiq", "12.08.2016", new Group[]{group, klangkarussell});
-        System.out.println(festival);
-
 
         System.out.println("Write the time on the scene for the group:\n     in format \"(start)hh-mm - (end)hh-mm \" : \n");
+        String result = infoFestival(festival);
 
+        System.out.println(festival);
+        System.out.println(result);
+
+    }
+
+    private static String infoFestival(Festival festival) throws IOException {
         BufferedReader bR = new BufferedReader(new InputStreamReader(System.in));
         String input;
 
+        StringBuilder sB = new StringBuilder();
         for (int i = 0; i < festival.getGroups().length; i++) {
             System.out.print("The group: " + festival.getGroups()[i].getName());
             input = bR.readLine();
-             festival.setOrderInThScene(festival.getGroups()[i], input);
+            sB.append(festival.getGroups()[i].getName()).append(" -> ").append(input).append(System.lineSeparator());
+
         }
+        return sB.toString();
     }
 }
+/*
+12:34 - 12:45
+12:56 -13:00
+ */
