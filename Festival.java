@@ -1,5 +1,7 @@
 package MusicFestival;
 
+import java.util.TreeMap;
+
 /**
  * Created by Magi on 24.7.2016 г..
  */
@@ -8,6 +10,7 @@ public class Festival {
     private String place;
     private String time;
     private Group[] groups;
+    private TreeMap<Group, String> orderInThScene;
 
 
     public Festival(String name, String place, String time, Group[] groups) {
@@ -15,6 +18,7 @@ public class Festival {
         this.setPlace(place);
         this.setTime(time);
         this.groups = groups;
+        this.orderInThScene = new TreeMap<>();
     }
 
     public String getName() {
@@ -61,9 +65,21 @@ public class Festival {
         this.groups = groups;
     }
 
+    public TreeMap<Group, String> getOrderInThScene() {
+        return orderInThScene;
+    }
+
+    public void setOrderInThScene(Group group, String timeONScene) {
+        if (group.equals(null) || timeONScene == null ) {
+            throw new IllegalArgumentException("Wrong data information for festival.");
+        }
+        orderInThScene.put(group, timeONScene);
+        //   this.orderInThScene = orderInThScene;
+    }
+
     @Override
     public String toString() {
         return "Festival: " + this.getName() + "\n" + "The place is " + this.getPlace() + " and the time is " + this.getTime()
-                + "Invited groups are: " + this.getGroups();
+                + "\nInvited groups are: " + this.getGroups();
     }
 }

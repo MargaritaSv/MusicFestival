@@ -18,6 +18,5 @@ public class InstrumentsMusician extends Musician {
     @Override
     public boolean presentation(String choice) {
         return (choice == "good") ? true : false;
-
     }
 }

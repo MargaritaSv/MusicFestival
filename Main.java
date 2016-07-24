@@ -1,13 +1,17 @@
 package MusicFestival;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * Created by Magi on 24.7.2016 г..
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //create songs
         Song linkinParkText = new Song("Burn It Down", new StringBuilder("We're building it up\n" +
@@ -46,7 +50,20 @@ public class Main {
 
         Group klangkarussell = new Group("Klangkarussell", arList, new Song[]{klangkarussellSong});
 
+
         Festival festival = new Festival("Dance", "Sofiq", "12.08.2016", new Group[]{group, klangkarussell});
-System.out.println(festival);
+        System.out.println(festival);
+
+
+        System.out.println("Write the time on the scene for the group:\n     in format \"(start)hh-mm - (end)hh-mm \" : \n");
+
+        BufferedReader bR = new BufferedReader(new InputStreamReader(System.in));
+        String input;
+
+        for (int i = 0; i < festival.getGroups().length; i++) {
+            System.out.print("The group: " + festival.getGroups()[i].getName());
+            input = bR.readLine();
+             festival.setOrderInThScene(festival.getGroups()[i], input);
+        }
     }
 }

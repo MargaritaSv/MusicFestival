@@ -22,21 +22,11 @@ public class Group {
         this.musicians = new ArrayList<>();
     }
 
-
-    //if one is created the name we can't changed
-
     public String getName() {
         return name;
     }
 
-    public Song[] getSongs() {
-        return songs;
-    }
-
-    public ArrayList<Musician> getMusicians() {
-        return musicians;
-    }
-
+    //if one is created the name we can't changed
     private void setName(String name) {
         if (name == null || name.trim().length() <= 1) {
             throw new IllegalArgumentException("The group name must be at least two letters.");
@@ -44,8 +34,17 @@ public class Group {
         this.name = name;
     }
 
+    public Song[] getSongs() {
+        return songs;
+    }
+
     public void setSongs(Song... songs) {
         this.songs = songs;
+    }
+
+
+    public ArrayList<Musician> getMusicians() {
+        return musicians;
     }
 
     public void setMusicians(ArrayList<Musician> musicians) {
