@@ -45,5 +45,8 @@ public class Main {
         group.setMusicians(listInstrumntsMusian);
 
         Group klangkarussell = new Group("Klangkarussell", arList, new Song[]{klangkarussellSong});
+
+        Festival festival = new Festival("Dance", "Sofiq", "12.08.2016", new Group[]{group, klangkarussell});
+System.out.println(festival);
     }
 }
