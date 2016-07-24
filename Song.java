@@ -4,6 +4,7 @@ package MusicFestival;
  * Created by Magi on 24.7.2016 г..
  */
 public class Song {
+    public static final String NO_TEXT = "the song is instrumental";
     private String title;
     private StringBuilder text;
 
