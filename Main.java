@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.TreeMap;
 
 /**
  * Created by Magi on 24.7.2016 г..
@@ -50,7 +49,7 @@ public class Main {
 
         Group klangkarussell = new Group("Klangkarussell", arList, new Song[]{klangkarussellSong});
 
-        Festival festival = new Festival("Dance", "Sofiq", "12.08.2016", new Group[]{group, klangkarussell});
+        Festival festival = new Festival("ZombiParty", "Sofiq", "12.08.2016", new Group[]{group, klangkarussell});
 
         System.out.println("Write the time on the scene for the group:\n     in format \"(start)hh-mm - (end)hh-mm \" : \n");
         String result = infoFestival(festival);
@@ -76,5 +75,5 @@ public class Main {
 }
 /*
 12:34 - 12:45
-12:56 -13:00
+12:56 - 13:00
  */

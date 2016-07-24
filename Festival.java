@@ -63,9 +63,20 @@ public class Festival {
         this.groups = groups;
     }
 
+    private StringBuilder takeGroups() {
+        StringBuilder sB = new StringBuilder();
+        for (int i = 0; i < getGroups().length; i++) {
+            sB.append(getGroups()[i].getName()).append(" , ");
+        }
+        return sB;
+    }
+
     @Override
     public String toString() {
-        return "Festival: " + this.getName() + "\n" + "The place is " + this.getPlace() + " and the time is " + this.getTime()
-                + "\nInvited groups are: " + this.getGroups();
+        String allGroups = takeGroups().toString();
+        allGroups = allGroups.substring(0, allGroups.length() - 2);
+
+        return "Festival: " + this.getName() + "\n" + "The place is " + this.getPlace() + " and the date is " + this.getTime()
+                + "\nInvited groups are: " + allGroups;
     }
 }
