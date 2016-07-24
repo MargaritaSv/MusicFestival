@@ -10,10 +10,10 @@ public class Group {
     private Song[] songs;
     private ArrayList<Musician> musicians;
 
-    public Group(String name, Song[] songs, ArrayList<Musician> musicians) {
+    public Group(String name, ArrayList<Musician> musicians, Song[] songs) {
         this.setName(name);
-        this.setSongs(songs);
         this.setMusicians(musicians);
+        this.setSongs(songs);
     }
 
     public Group(String name) {
@@ -21,6 +21,7 @@ public class Group {
         this.setSongs(new Song[10]);
         this.musicians = new ArrayList<>();
     }
+
 
     //if one is created the name we can't changed
     private void setName(String name) {
