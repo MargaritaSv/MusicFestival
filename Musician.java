@@ -16,9 +16,7 @@ public abstract class Musician implements IGoodBad {
         return name;
     }
 
-
     protected void setName(String name) {
-
         this.name = name;
     }
 

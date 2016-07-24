@@ -19,6 +19,7 @@ public class Main {
                 "\n" +
                 "Read more: Linkin Park - Burn It Down Lyrics | MetroLyrics\n"));
 
+        Song linkinParkNumb = new Song("Numb", new StringBuilder(" numb text"));
         Song madonnaText = new Song("Vogue", new StringBuilder("All you need is your own imagination\n" +
                 "So use it that's what it's for (that's what it's for)\n" +
                 "Go inside, for your finest inspiration"));
@@ -29,12 +30,20 @@ public class Main {
         //create musician
         Vocalist madonna = new Vocalist("Madonna");
         Musician klang = new InstrumentsMusician(InstrumentsMusician.MANY_INSTRUMEMTSMUSICIAN);
+        InstrumentsMusician linkInstr = new InstrumentsMusician(InstrumentsMusician.MANY_INSTRUMEMTSMUSICIAN);
+
         ArrayList<Musician> arList = new ArrayList<>();
         arList.add(klang);
         arList.add(madonna);
 
+        ArrayList<Musician> listInstrumntsMusian = new ArrayList<>();
+        listInstrumntsMusian.add(linkInstr);
+
         //create groups
         Group group = new Group("LinkinPark");
+        group.setSongs(linkinParkText, linkinParkNumb);
+        group.setMusicians(listInstrumntsMusian);
+
         Group klangkarussell = new Group("Klangkarussell", arList, new Song[]{klangkarussellSong});
     }
 }
